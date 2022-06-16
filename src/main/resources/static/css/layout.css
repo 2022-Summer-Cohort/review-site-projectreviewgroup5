@@ -22,7 +22,10 @@ header {
 
 }
 
-
+header a {
+    color: #2D2121;
+    text-decoration: none;
+}
 
 .header-container {
     /* background-color: blue; */
