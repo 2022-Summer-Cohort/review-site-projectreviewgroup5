@@ -18,7 +18,11 @@ header {
     font-size: 1.6rem;
     letter-spacing: 6px;
     color: #2D2121;
+    text-decoration: none;
+
 }
+
+
 
 .header-container {
     /* background-color: blue; */
