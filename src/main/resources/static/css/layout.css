@@ -14,7 +14,8 @@ header {
     justify-content: center;
     background-color: #808F64;
     /* margin-top: 2%; */
-    border: 3px black solid;
+    border-top: 3px black solid;
+    border-bottom: 3px black solid;
     font-size: 1.6rem;
     letter-spacing: 6px;
     color: #2D2121;
@@ -43,7 +44,8 @@ nav {
     font-size: 1.1;
 
     align-items: center;
-    border: 3px black solid;
+    border-top: 3px black solid;
+    border-bottom: 3px black solid;
     font-size: 1.6rem;
     padding: 2%;
 }
