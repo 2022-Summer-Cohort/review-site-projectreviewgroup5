@@ -1,29 +1,27 @@
 package org.wecancoeit.reviews.model;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import java.util.Arrays;
-import java.util.Collection;
+import javax.persistence.ManyToOne;
 
 @Entity
-public class Hashtag {
+public class Review {
 
     @Id
     @GeneratedValue
     private long id;
     private String name;
+    private int reviewNumber;
 
-    @ManyToMany (mappedBy = "hashtags")
-    private Collection<Sites> sites;
+    @ManyToOne
+    private Sites sites;
 
-    public Hashtag(String name, Sites...sites) {
+    public Review(String name, int reviewNumber, Sites sites) {
         this.name = name;
-        this.sites = Arrays.asList(sites);
-    }
-
-    public Hashtag() {
+        this.reviewNumber = reviewNumber;
+        this.sites = sites;
     }
 
     public long getId() {
@@ -34,7 +32,11 @@ public class Hashtag {
         return name;
     }
 
-    public Collection<Sites> getSites() {
+    public int getReviewNumber() {
+        return reviewNumber;
+    }
+
+    public Sites getSites() {
         return sites;
     }
 }

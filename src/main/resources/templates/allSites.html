@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,11 +22,18 @@
         </div>
     </header>
 
-    <div class="thumbnails">
-        <a href="https://www.hbomax.com/">
-            <img src="https://hbomax-images.warnermediacdn.com/2020-05/square%20social%20logo%20400%20x%20400_0.png"
-            alt="HBO Max Thumbnail">
-        </a>
+<!--    <div class="thumbnails">-->
+<!--        <a th:href="${sites.url}">-->
+<!--            <img th:src="${sites.imgUrl}" th:alt="${sites.altImgTxt}">-->
+<!--        </a>-->
+
+<!--&lt;!&ndash;        <p th:text="${sites.name}"></p>&ndash;&gt;-->
+<!--    </div>-->
+
+    <div class="container">
+        <ul>
+            <li th:each="thing:${sites}" ><a th:href="'/sites/' + ${thing.id}" th:text="${thing.name}"></a></li>
+        </ul>
     </div>
 
     <main>
