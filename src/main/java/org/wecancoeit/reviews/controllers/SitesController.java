@@ -25,7 +25,7 @@ public class SitesController {
 
     @RequestMapping("/{id}")
     public String showSite(Model model, @PathVariable Long id) {
-        model.addAttribute("sites", sitesRepo.findById(id).get());
+        model.addAttribute("site", sitesRepo.findById(id).get());
         return "site";
     }
 

@@ -24,6 +24,9 @@ public class Review {
         this.sites = sites;
     }
 
+    public Review() {
+    }
+
     public long getId() {
         return id;
     }

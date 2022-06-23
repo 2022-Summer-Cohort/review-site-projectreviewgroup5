@@ -3,9 +3,14 @@ package org.wecancoeit.reviews;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.wecancoeit.reviews.model.Hashtag;
+import org.wecancoeit.reviews.model.Review;
 import org.wecancoeit.reviews.model.Sites;
 import org.wecancoeit.reviews.repos.HashtagRepository;
+import org.wecancoeit.reviews.repos.ReviewRepository;
 import org.wecancoeit.reviews.repos.SitesRepository;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Component
@@ -13,21 +18,33 @@ public class Populator implements CommandLineRunner {
 
     private HashtagRepository hashtagRepo;
     private SitesRepository sitesRepo;
+    private ReviewRepository reviewRepo;
 
-    public Populator(HashtagRepository hashtagRepo, SitesRepository sitesRepo) {
+    public Populator(HashtagRepository hashtagRepo, SitesRepository sitesRepo, ReviewRepository reviewRepo) {
         this.hashtagRepo = hashtagRepo;
         this.sitesRepo = sitesRepo;
+        this.reviewRepo = reviewRepo;
     }
 
     @Override
     public void run(String... args) throws Exception {
 
+//        List<String> list = new ArrayList<>();
+//        list.add("Good movies");
+//        list.add("shit movies");
+
+
         Hashtag hashtag1 = new Hashtag("#bingeable");
         hashtagRepo.save(hashtag1);
 
+
+
         Sites hbo = new Sites("HBO","https://hbomax-images.warnermediacdn.com/2020-05/square%20social%20logo%20400%20x%20400_0.png",
-                "hbo logo","http://www.hbo.com",true,);
+                "hbo logo","http://www.hbo.com",true,hashtag1);
         sitesRepo.save(hbo);
+
+        Review review1 = new Review("review1",2,hbo);
+        reviewRepo.save(review1);
 
         Sites hulu = new Sites("Hulu", "https://riddleandbloom.com/wp-content/uploads/2020/05/hulu0-square.jpg",
                 "hulu logo","https://www.hulu.com/welcome",true);
@@ -42,7 +59,7 @@ public class Populator implements CommandLineRunner {
         sitesRepo.save(paramount);
 
         Sites crackle = new Sites("Crackle","https://gobrolly.com/wp-content/uploads/2018/09/sony-crackle-logo-300x300.png",
-                "crackle logo","http://www.crackle.com",false,hashtag1);
+                "crackle logo","http://www.crackle.com",false);
         sitesRepo.save(crackle);
 
         Sites roku = new Sites("Roku","https://image.roku.com/bWFya2V0aW5n/logo-therokuchannel.jpg",

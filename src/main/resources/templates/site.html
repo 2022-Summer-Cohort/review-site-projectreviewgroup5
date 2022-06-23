@@ -23,9 +23,17 @@
     </header>
 
     <div class="thumbnails">
-        <a th:href="${sites.url}">
-            <img th:src="${sites.imgUrl}" th:alt="${sites.altImgTxt}">
+        <a th:href="${site.url}">
+            <img th:src="${site.imgUrl}" th:alt="${site.altImgTxt}">
         </a>
+        <ul>
+            <li th:each="thing:${site.reviews}" th:text="${thing.name}"></li>
+        </ul>
+        <ul>
+            <li th:each="thing:${site.hashtags}" ><a th:href="'/hashtags/'" th:text="${thing.name}"></a></li>
+        </ul>
+
+
 
 <!--        <p th:text="${sites.name}"></p>-->
     </div>
