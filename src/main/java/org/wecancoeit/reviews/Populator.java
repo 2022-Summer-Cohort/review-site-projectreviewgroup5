@@ -36,34 +36,38 @@ public class Populator implements CommandLineRunner {
 
         Hashtag hashtag1 = new Hashtag("#bingeable");
         hashtagRepo.save(hashtag1);
-
+        Hashtag hashtag2 = new Hashtag("#RIPOFF");
+        hashtagRepo.save(hashtag2);
+        Hashtag hashtag3 = new Hashtag("#bestMovies");
+        hashtagRepo.save(hashtag3);
+        Hashtag hashtag4 = new Hashtag("#bestShows");
+        hashtagRepo.save(hashtag4);
+        Hashtag hashtag5 = new Hashtag("#WorthIT");
+        hashtagRepo.save(hashtag5);
 
 
         Sites hbo = new Sites("HBO","https://hbomax-images.warnermediacdn.com/2020-05/square%20social%20logo%20400%20x%20400_0.png",
-                "hbo logo","http://www.hbo.com",true,hashtag1);
+                "hbo logo","http://www.hbo.com",true,hashtag1,hashtag2,hashtag3);
         sitesRepo.save(hbo);
 
-        Review review1 = new Review("review1",2,hbo);
-        reviewRepo.save(review1);
-
         Sites hulu = new Sites("Hulu", "https://riddleandbloom.com/wp-content/uploads/2020/05/hulu0-square.jpg",
-                "hulu logo","https://www.hulu.com/welcome",true);
+                "hulu logo","https://www.hulu.com/welcome",true,hashtag1,hashtag4,hashtag5);
         sitesRepo.save(hulu);
 
         Sites netflix = new Sites("Netflix", "https://cdn.vox-cdn.com/thumbor/Yq1Vd39jCBGpTUKHUhEx5FfxvmM=/39x0:3111x2048/1200x800/filters:focal(39x0:3111x2048)/cdn.vox-cdn.com/uploads/chorus_image/image/49901753/netflixlogo.0.0.png",
-                "netflix logo","https://www.netflix.com/",true);
+                "netflix logo","https://www.netflix.com/",true,hashtag2);
         sitesRepo.save(netflix);
 
         Sites paramount = new Sites("Paramount", "https://ca-times.brightspotcdn.com/dims4/default/1629592/2147483647/strip/true/crop/3300x2550+0+0/resize/840x649!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F0e%2Ffc%2Fcca99a12483eae714f5f2e7667ca%2Fparamount-plus-logo.jpg",
-                "parramount logo","https://www.paramount.com/",true);
+                "parramount logo","https://www.paramount.com/",true,hashtag5);
         sitesRepo.save(paramount);
 
         Sites crackle = new Sites("Crackle","https://gobrolly.com/wp-content/uploads/2018/09/sony-crackle-logo-300x300.png",
-                "crackle logo","http://www.crackle.com",false);
+                "crackle logo","http://www.crackle.com",false,hashtag1,hashtag4);
         sitesRepo.save(crackle);
 
         Sites roku = new Sites("Roku","https://image.roku.com/bWFya2V0aW5n/logo-therokuchannel.jpg",
-                "roku logo","https://www.therokuchannel.roku.com/",false);
+                "roku logo","https://www.therokuchannel.roku.com/",false,hashtag1,hashtag2,hashtag5);
         sitesRepo.save(roku);
 
         Sites tubi = new Sites("TubiTv","https://cdn.adrise.tv/tubitv-assets/img/tubi_open-graph-512x512.png",
@@ -71,8 +75,11 @@ public class Populator implements CommandLineRunner {
         sitesRepo.save(tubi);
 
         Sites youtube = new Sites("Youtube","https://static.vecteezy.com/system/resources/previews/003/399/771/original/youtube-icon-editorial-free-vector.jpg",
-                "youtube logo", "https://www.youtube.com",false);
+                "youtube logo", "https://www.youtube.com",false,hashtag3);
         sitesRepo.save(youtube);
+
+        Review review1 = new Review("review1",2,hbo);
+        reviewRepo.save(review1);
 
 
     }

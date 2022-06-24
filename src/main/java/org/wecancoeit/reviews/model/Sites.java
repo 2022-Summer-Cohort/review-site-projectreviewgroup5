@@ -38,6 +38,9 @@ public class Sites {
 
     public Sites() {
     }
+    public void addHashtag(Hashtag hashtag) {
+        hashtags.add(hashtag);
+    }
     public long getId() {
         return id;
     }

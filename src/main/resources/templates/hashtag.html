@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,9 +10,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tubi</title>
+    <title>Hashtags</title>
 </head>
-
 <body>
     <header>
         <div class="header-container">
@@ -21,21 +20,14 @@
             </h1>
         </div>
     </header>
-
-    <div class="thumbnails">
-        <a href="https://tubitv.com/">
-            <img src="https://cdn.adrise.tv/tubitv-assets/img/tubi_open-graph-512x512.png" alt="Tubi Thumbnail">
-        </a>
-    </div>
-
     <main>
-        <nav>
-            <a href="/paid.html">Paid</a>
-            <a href="/un-paid.html">Un-paid</a>
-            <a href="/hashtag.html">#Hash-Tags</a>
-
-        </nav>
+            <nav>
+                <h1 th:text="${hashtag.name}"></h1>
+                <ul>
+                    <li th:each = "thing: ${hashtag.sites}" ><a th:href="'/sites/' +
+        ${thing.id}" th:text="${thing.name}"></a></li>
+                </ul>
+            </nav>
     </main>
-
 </body>
 </html>

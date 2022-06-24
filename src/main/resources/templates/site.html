@@ -30,7 +30,8 @@
             <li th:each="thing:${site.reviews}" th:text="${thing.name}"></li>
         </ul>
         <ul>
-            <li th:each="thing:${site.hashtags}" ><a th:href="'/hashtags/'" th:text="${thing.name}"></a></li>
+            <li th:each="thing:${site.hashtags}" ><a th:href="'/hashtags/' +
+        ${thing.id}" th:text="${thing.name}"></a></li>
         </ul>
 
 
@@ -42,7 +43,7 @@
         <nav>
             <a href="/paid.html">Paid</a>
             <a href="/un-paid.html">Un-paid</a>
-            <a href="/hashtag.html">#Hash-Tags</a>
+            <a href="/hashtags/">#Hash-Tags</a>
 
         </nav>
     </main>
