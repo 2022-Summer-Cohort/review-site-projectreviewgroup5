@@ -41,6 +41,9 @@ public class Sites {
     public void addHashtag(Hashtag hashtag) {
         hashtags.add(hashtag);
     }
+
+    public void addReview(Review review) {reviews.add(review);
+    }
     public long getId() {
         return id;
     }

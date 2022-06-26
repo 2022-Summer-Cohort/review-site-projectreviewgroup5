@@ -13,14 +13,12 @@ public class Review {
     @GeneratedValue
     private long id;
     private String name;
-    private int reviewNumber;
 
     @ManyToOne
     private Sites sites;
 
-    public Review(String name, int reviewNumber, Sites sites) {
+    public Review(String name, Sites sites) {
         this.name = name;
-        this.reviewNumber = reviewNumber;
         this.sites = sites;
     }
 
@@ -35,9 +33,6 @@ public class Review {
         return name;
     }
 
-    public int getReviewNumber() {
-        return reviewNumber;
-    }
 
     public Sites getSites() {
         return sites;

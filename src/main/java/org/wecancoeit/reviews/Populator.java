@@ -78,7 +78,7 @@ public class Populator implements CommandLineRunner {
                 "youtube logo", "https://www.youtube.com",false,hashtag3);
         sitesRepo.save(youtube);
 
-        Review review1 = new Review("review1",2,hbo);
+        Review review1 = new Review("review1",hbo);
         reviewRepo.save(review1);
 
 

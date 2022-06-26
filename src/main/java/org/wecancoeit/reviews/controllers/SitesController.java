@@ -4,8 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.wecancoeit.reviews.model.Hashtag;
+import org.wecancoeit.reviews.model.Review;
 import org.wecancoeit.reviews.model.Sites;
 import org.wecancoeit.reviews.repos.HashtagRepository;
+import org.wecancoeit.reviews.repos.ReviewRepository;
 import org.wecancoeit.reviews.repos.SitesRepository;
 
 import java.util.Optional;
@@ -17,9 +19,12 @@ public class SitesController {
     private SitesRepository sitesRepo;
     private HashtagRepository hashtagRepo;
 
-    public SitesController(SitesRepository sitesRepo, HashtagRepository hashtagRepo) {
+    private ReviewRepository reviewRepo;
+
+    public SitesController(SitesRepository sitesRepo, HashtagRepository hashtagRepo, ReviewRepository reviewRepo) {
         this.sitesRepo = sitesRepo;
         this.hashtagRepo = hashtagRepo;
+        this.reviewRepo = reviewRepo;
     }
 
     @RequestMapping("/")
@@ -51,5 +56,21 @@ public class SitesController {
         return "redirect:/sites/"+id;
     }
 
+    @PostMapping("/{id}/addReview")
+    public String addReviewToSite(@PathVariable Long id, @RequestParam String review) {
+        Sites site = sitesRepo.findById(id).get();
+        Optional<Review> reviewOptional = reviewRepo.findByNameIgnoreCase(review);
+        if(reviewOptional.isPresent()) {
+            if(!site.getReviews().contains(reviewOptional.get())) {
+                site.addReview(reviewOptional.get());
+            }
+        } else {
+            Review review1 = new Review(review, site);
+            reviewRepo.save(review1);
+            site.addReview(review1);
+        }
+        sitesRepo.save(site);
+        return "redirect:/sites/"+id;
+    }
 
 }
