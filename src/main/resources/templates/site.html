@@ -28,14 +28,15 @@
       <a th:href="${site.url}">
         <img th:src="${site.imgUrl}" th:alt="${site.altImgTxt}" />
       </a>
-      <ul>
+    </div>
+    <div class = "main-container">
+      <ul class = "review-list">
         <li th:each="thing:${site.reviews}" th:text="${thing.name}"></li>
       </ul>
-      <ul>
+      <ul class = "hashtag-list">
         <li th:each="thing:${site.hashtags}">
           <a
-            th:href="'/hashtags/' +
-        ${thing.id}"
+            th:href="'/hashtags/' + ${thing.id}"
             th:text="${thing.name}"
           ></a>
         </li>
@@ -64,9 +65,10 @@
           </form>
         </div>
       </div>
+    </div>
 
       <!--        <p th:text="${sites.name}"></p>-->
-    </div>
+
 
     <main>
       <nav>
