@@ -42,6 +42,9 @@ public class SitesController {
     @PostMapping("/{id}/addHashtag")
     public String addHashtagToSite(@PathVariable Long id, @RequestParam String hashtag) {
         Sites site = sitesRepo.findById(id).get();
+        if (hashtag.charAt(0)!='#') {
+            hashtag = "#"+hashtag;
+        }
         Optional<Hashtag> hashtagOptional = hashtagRepo.findByNameIgnoreCase(hashtag);
         if(hashtagOptional.isPresent()) {
             if(!site.getHashtags().contains(hashtagOptional.get())) {
