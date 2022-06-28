@@ -71,3 +71,133 @@ nav a{
     font-weight: bold;
     background-color: #909F78;
 }
+<<<<<<< HEAD
+=======
+
+.review-hashtag {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.hashtag-container {
+    background-color: #cfb09d;
+    border: 2px solid black;
+    display: flex;
+    width: 25%;
+    flex-direction: column;
+    padding: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: auto;
+}
+
+.hashtag-container ul{
+    list-style-type: none;
+    font-size: 1.2rem;
+    margin-left: 2%;
+}
+
+.hashtag-container li {
+    margin-top: 4%;
+    text-decoration: none;
+}
+
+
+.review-container {
+    background-color: #cfb09d;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    width: 60%;
+    margin-right: 5%;
+}
+
+.review-container ul{
+    list-style: none;
+    font-size: 1.2rem;
+    margin-left: 2%;
+}
+.review-container li {
+    border: 2px solid black;
+    margin-top: 4%;
+    padding: 3%;
+    background-color: #EADCD3;
+}
+
+.review-form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: lightpink; */
+    margin-top: 5%;
+    border: 2px solid black;
+    width: 40%;
+    margin-left: 30%;
+    padding: 2%;
+}
+
+.hashtag-form{
+    display: flex;
+    padding: 1%;
+    /* background-color: darkkhaki; */
+    margin-top: 2%;
+}
+
+.hashtag-form label{
+    font-size: 1.1rem;
+    padding: 4%;
+}
+
+.hashtag-form input{
+    height: 30px;
+    width: 200px;
+    border-radius: 5%;
+    padding: 2%;
+}
+
+.hashtag-form button{
+    background-color: #808F64;
+    font-size: 15px;
+    padding: 2%;
+    border-radius: 10%;
+    margin-left: 45%;
+    margin-top: 4%;
+}
+.hashtag-form button:hover {
+    background-color: #909F78; 
+    color: white;
+  }
+
+  .review-form{
+      /* background-color: crimson; */
+      display: flex;
+      
+  }
+
+  .review-form p{
+    font-size: 1.2rem;
+    margin-left: 5%;
+    padding: 4%;
+  }
+
+  textarea {
+      resize: none;
+      border-radius: 2%;
+      margin-left: 5%;
+  }
+
+.review-form button{
+    background-color: #808F64;
+    font-size: 20px;
+    padding: 2%;
+    border-radius: 10%;
+    margin-left: 45%;
+    margin-top: 4%;
+}
+
+.review-form button:hover {
+    background-color: #909F78; 
+    color: white;
+  }
+>>>>>>> 0eaacf05711b0d1a0f4aacde90cd3a731b77f596
