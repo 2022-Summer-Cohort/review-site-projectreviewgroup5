@@ -22,7 +22,7 @@
 </header>
 <!--<div th:replace="fragments.html :: nav"></div>-->
 <div class="container">
-    <ul>
+    <ul class="hashtag-ul">
         <li th:each="thing:${hashtags}" ><a th:href="'/hashtags/' +
         ${thing.id}" th:text="${thing.name}"></a></li>
     </ul>

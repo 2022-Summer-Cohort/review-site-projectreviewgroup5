@@ -71,12 +71,11 @@ nav a{
     font-weight: bold;
     background-color: #909F78;
 }
-<<<<<<< HEAD
-=======
 
 .review-hashtag {
     display: flex;
     flex-direction: row-reverse;
+    margin-top: 5%;
 }
 
 .hashtag-container {
@@ -117,12 +116,14 @@ nav a{
     list-style: none;
     font-size: 1.2rem;
     margin-left: 2%;
+    margin-top: 5%;
 }
 .review-container li {
     border: 2px solid black;
     margin-top: 4%;
     padding: 3%;
     background-color: #EADCD3;
+    width: 60%;
 }
 
 .review-form-container{
@@ -165,14 +166,14 @@ nav a{
     margin-top: 4%;
 }
 .hashtag-form button:hover {
-    background-color: #909F78; 
+    background-color: #909F78;
     color: white;
   }
 
   .review-form{
       /* background-color: crimson; */
       display: flex;
-      
+
   }
 
   .review-form p{
@@ -197,7 +198,47 @@ nav a{
 }
 
 .review-form button:hover {
-    background-color: #909F78; 
+    background-color: #909F78;
     color: white;
   }
->>>>>>> 0eaacf05711b0d1a0f4aacde90cd3a731b77f596
+
+  .paid-img {
+  width: 45vw;
+  height: auto;
+  margin-left: 25%;
+  margin-top:1%;
+  }
+
+  .un-paid-img {
+  margin-left: 40%;
+  width: 350px;
+  height: auto;
+  margin-top: 2%;
+  }
+
+  .hashtag-ul {
+    margin-top: 4%;
+    text-align: center;
+  }
+  .hashtag-ul li {
+    font-size: 1.3rem;
+    padding: 1%;
+    border: 2px solid black;
+    margin: 1%;
+    display: inline;
+    border-radius: 5%;
+    list-style-type: none;
+    text-align: center;
+  }
+
+.hashtag-h1{
+text-align: center;
+font-size: 2rem;
+margin: 1%;
+}
+.inside-list{
+    text-align:center;
+    margin: 2%;
+    font-size: 1.5rem;
+    list-style-type: none;
+}
