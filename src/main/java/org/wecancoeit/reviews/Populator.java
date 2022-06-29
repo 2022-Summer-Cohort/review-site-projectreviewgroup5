@@ -11,7 +11,6 @@ import org.wecancoeit.reviews.repos.HashtagRepository;
 import org.wecancoeit.reviews.repos.ReviewRepository;
 import org.wecancoeit.reviews.repos.SitesRepository;
 
-
 @Component
 public class Populator implements CommandLineRunner {
 
@@ -30,16 +29,10 @@ public class Populator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-//        List<String> list = new ArrayList<>();
-//        list.add("Good movies");
-//        list.add("shit movies");
-
         Category paid = new Category("Paid");
         categoriesRepo.save(paid);
         Category unpaid = new Category("unPaid");
         categoriesRepo.save(unpaid);
-
-
 
         Hashtag hashtag1 = new Hashtag("#bingeable");
         hashtagRepo.save(hashtag1);
@@ -87,7 +80,6 @@ public class Populator implements CommandLineRunner {
 
         Review review1 = new Review("review1",hbo);
         reviewRepo.save(review1);
-
 
     }
 

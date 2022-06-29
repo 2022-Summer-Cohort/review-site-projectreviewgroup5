@@ -29,7 +29,8 @@
         <nav>
             <ul>
                 <li th:each = "thing:${category.sites}">
-                <a th:text="${thing.name}" th:href="'/sites/' + ${thing.id}"></a></li>
+                <a th:text="${thing.name}" th:href="'/sites/' + ${thing.id}"></a>
+                </li>
             </ul>
         </nav>
     </main>
