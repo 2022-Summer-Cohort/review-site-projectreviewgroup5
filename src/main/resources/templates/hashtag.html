@@ -31,7 +31,7 @@
     </div>
 
     <main>
-        <nav>
+        <nav class="footer">
             <ul>
                 <li th:each = "thing:${categories}">
                     <a th:text="${thing.name}" th:href="'/categories/' + ${thing.id}"></a></li>

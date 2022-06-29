@@ -25,15 +25,16 @@
     <div class="img-container">
         <img src="/img/family tv banner.jpg">
     </div>
-        <nav>
-            <ul>
-                <li th:each = "thing:${category.sites}">
-                <a th:text="${thing.name}" th:href="'/sites/' + ${thing.id}"></a>
-                </li>
-            </ul>
-        </nav>
+<div class="container">
+    <ul class="hashtag-ul">
+        <li th:each = "thing:${category.sites}">
+            <a th:text="${thing.name}" th:href="'/sites/' + ${thing.id}"></a>
+        </li>
+    </ul>
+
+</div>
 <main>
-    <nav>
+    <nav class="footer">
         <ul>
             <li th:each = "thing:${categories}">
                 <a th:text="${thing.name}" th:href="'/categories/' + ${thing.id}"></a></li>
