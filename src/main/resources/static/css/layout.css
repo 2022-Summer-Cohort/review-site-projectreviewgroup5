@@ -49,20 +49,15 @@ header a {
 }
 
 
-.footer {
-    display: flex;
-    justify-content: center;
+.foot {
     margin-top: 5%;
     background-color: #808F64;
-    justify-content: space-around;
-    font-size: 1.1;
-
-    align-items: center;
+    font-size: 1.1rem;
     border: 3px black solid;
     font-size: 1.6rem;
     padding: 2%;
 }
-.footer a{
+.foot a{
     text-decoration: none;
     border: 2px solid black;
     padding: 15px;
@@ -71,10 +66,11 @@ header a {
     font-weight: bold;
     background-color: #909F78;
 }
-.footer ul{
+.foot ul{
     display:flex;
+    justify-content: space-around;
 }
-.footer ul li {
+.foot ul li {
     list-style:none;
 }
 

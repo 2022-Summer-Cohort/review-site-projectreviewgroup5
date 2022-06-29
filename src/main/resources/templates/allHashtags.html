@@ -13,14 +13,8 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-<header>
-    <div class="header-container">
-        <h1>
-            <a href="/">Streaming Services</a>
-        </h1>
-    </div>
-</header>
-<!--<div th:replace="fragments.html :: nav"></div>-->
+    <div th:replace="fragments :: header"></div>
+<!--<div th:replace="fragments.html :: header"></div>-->
 <div class="container">
     <ul class="hashtag-ul">
         <li th:each="thing:${hashtags}" ><a th:href="'/hashtags/' +
@@ -29,7 +23,7 @@
 </div>
 <!--<div th:replace="fragments.html :: footer"></div>-->
 <main>
-    <nav class="footer">
+    <nav class="foot">
         <ul>
             <li th:each = "thing:${categories}">
                 <a th:text="${thing.name}" th:href="'/categories/' + ${thing.id}"></a></li>

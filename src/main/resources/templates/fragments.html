@@ -11,25 +11,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title th:text ="${category.name}"></title>
+    <title>title</title>
 </head>
-
 <body>
-<div th:replace="fragments :: header"></div>
-    <div class="img-container">
-        <img src="/img/family tv banner.jpg">
-    </div>
-<div class="container">
-    <ul class="hashtag-ul">
-        <li th:each = "thing:${category.sites}">
-            <a th:text="${thing.name}" th:href="'/sites/' + ${thing.id}"></a>
-        </li>
-    </ul>
-
+<div th:fragment="header">
+    <header>
+        <div class="header-container">
+            <h1>
+                <a href="/">Streaming Services</a>
+            </h1>
+        </div>
+    </header>
 </div>
-<main>
-<div th:replace="fragments :: footer"></div>
-</main>
-</body>
 
+<div th:fragment="footer">
+    <nav class="foot">
+        <ul>
+            <li th:each = "thing:${categories}">
+                <a th:text="${thing.name}" th:href="'/categories/' + ${thing.id}"></a></li>
+            <li><a href="/hashtags/">#Hash-Tags</a></li>
+        </ul>
+    </nav>
+</div>
+</body>
 </html>

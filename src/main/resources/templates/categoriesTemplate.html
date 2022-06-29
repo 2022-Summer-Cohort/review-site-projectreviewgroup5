@@ -15,24 +15,12 @@
 </head>
 
 <body>
-<header>
-    <div class="header-container">
-        <h1>
-            <a href="/">Streaming Services</a>
-        </h1>
-    </div>
-</header>
+<div th:replace="fragments :: header"></div>
     <div class="img-container">
         <img src="/img/family tv banner.jpg">
     </div>
     <main>
-        <nav class="footer">
-            <ul>
-                <li th:each = "thing:${categories}">
-                <a th:text="${thing.name}" th:href="'/categories/' + ${thing.id}"></a></li>
-                <li><a href="/hashtags/">#Hash-Tags</a></li>
-            </ul>
-        </nav>
+        <div th:replace="fragments :: footer"></div>
     </main>
 </body>
 
