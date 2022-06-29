@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import org.wecancoeit.reviews.model.Hashtag;
 import org.wecancoeit.reviews.model.Review;
 import org.wecancoeit.reviews.model.Sites;
+import org.wecancoeit.reviews.repos.CategoryRepository;
 import org.wecancoeit.reviews.repos.HashtagRepository;
 import org.wecancoeit.reviews.repos.ReviewRepository;
 import org.wecancoeit.reviews.repos.SitesRepository;
@@ -18,24 +19,27 @@ public class SitesController {
 
     private SitesRepository sitesRepo;
     private HashtagRepository hashtagRepo;
-
     private ReviewRepository reviewRepo;
+    private CategoryRepository categoryRepo;
 
-    public SitesController(SitesRepository sitesRepo, HashtagRepository hashtagRepo, ReviewRepository reviewRepo) {
+    public SitesController(SitesRepository sitesRepo, HashtagRepository hashtagRepo, ReviewRepository reviewRepo, CategoryRepository categoryRepo) {
         this.sitesRepo = sitesRepo;
         this.hashtagRepo = hashtagRepo;
         this.reviewRepo = reviewRepo;
+        this.categoryRepo = categoryRepo;
     }
 
     @RequestMapping("/")
     public String showAllSites(Model model) {
         model.addAttribute("sites", sitesRepo.findAll());
+        model.addAttribute("categories", categoryRepo.findAll());
         return "allSites";
     }
 
     @RequestMapping("/{id}")
     public String showSite(Model model, @PathVariable Long id) {
         model.addAttribute("site", sitesRepo.findById(id).get());
+        model.addAttribute("categories", categoryRepo.findAll());
         return "site";
     }
 

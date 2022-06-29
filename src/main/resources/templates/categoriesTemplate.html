@@ -30,6 +30,7 @@
             <ul>
                 <li th:each = "thing:${categories}">
                 <a th:text="${thing.name}" th:href="'/categories/' + ${thing.id}"></a></li>
+                <li><a href="/hashtags/">#Hash-Tags</a></li>
             </ul>
         </nav>
     </main>

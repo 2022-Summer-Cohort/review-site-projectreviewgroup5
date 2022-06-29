@@ -27,6 +27,7 @@ public class CategoryController {
     @RequestMapping("/categories/{id}")
     public String showSingleCategory(Model model, @PathVariable long id) {
         model.addAttribute("category", categoriesRepo.findById(id).get());
+        model.addAttribute("categories", categoriesRepo.findAll());
         return "categoryTemplate";
     }
 

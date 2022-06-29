@@ -30,8 +30,10 @@
 <!--<div th:replace="fragments.html :: footer"></div>-->
 <main>
     <nav>
-        <a href="/categories/1">Paid</a>
-        <a href="/categories/2">Un-paid</a>
+        <ul>
+            <li th:each = "thing:${categories}">
+                <a th:text="${thing.name}" th:href="'/categories/' + ${thing.id}"></a></li>
+        </ul>
     </nav>
 </main>
 

@@ -25,7 +25,6 @@
     <div class="img-container">
         <img src="/img/family tv banner.jpg">
     </div>
-    <main>
         <nav>
             <ul>
                 <li th:each = "thing:${category.sites}">
@@ -33,7 +32,15 @@
                 </li>
             </ul>
         </nav>
-    </main>
+<main>
+    <nav>
+        <ul>
+            <li th:each = "thing:${categories}">
+                <a th:text="${thing.name}" th:href="'/categories/' + ${thing.id}"></a></li>
+            <li><a href="/hashtags/">#Hash-Tags</a></li>
+        </ul>
+    </nav>
+</main>
 </body>
 
 </html>
