@@ -1,39 +1,38 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/layout.css">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/src/main/resources/static/css/layout.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hashtags</title>
+    <title th:text ="${category.name}"></title>
 </head>
-<body>
-    <header>
-        <div class="header-container">
-            <h1>
-                <a href="/">Streaming Services</a>
-            </h1>
-        </div>
-    </header>
-    <div class = "container">
-        <h1 th:text="${hashtag.name}"></h1>
-        <ul>
-            <li th:each = "thing: ${hashtag.sites}" ><a th:href="'/sites/' +
-                    ${thing.id}" th:text="${thing.name}"></a></li>
-        </ul>
-    </div>
 
+<body>
+<header>
+    <div class="header-container">
+        <h1>
+            <a href="/">Streaming Services</a>
+        </h1>
+    </div>
+</header>
+    <div class="img-container">
+        <img src="/img/family tv banner.jpg">
+    </div>
     <main>
         <nav>
-            <a href="/categories/1">Paid</a>
-            <a href="/categories/2">Un-paid</a>
-            <a href="/hashtags/">#Hash-Tags</a>
+            <ul>
+                <li th:each = "thing:${category.sites}">
+                <a th:text="${thing.name}" th:href="'/sites/' + ${thing.id}"></a></li>
+            </ul>
         </nav>
     </main>
 </body>
+
 </html>

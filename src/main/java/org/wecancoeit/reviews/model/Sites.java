@@ -17,21 +17,23 @@ public class Sites {
     private String imgUrl;
     private String altImgTxt;
     private String url;
-    private Boolean paid;
 
     @OneToMany (mappedBy = "sites")
     private Collection<Review> reviews;
     @ManyToMany
     private Collection<Hashtag> hashtags;
+    @ManyToOne
+    private Category category;
+
 
     public Sites(String name, String imgUrl, String altImgTxt,
-                 String url, Boolean paid,
+                 String url, Category category,
                  Hashtag...hashtags) {
         this.name = name;
         this.imgUrl = imgUrl;
         this.altImgTxt = altImgTxt;
         this.url = url;
-        this.paid = paid;
+        this.category = category;
         this.reviews = new ArrayList<>();
         this.hashtags = Arrays.asList(hashtags);
     }
@@ -64,8 +66,8 @@ public class Sites {
         return url;
     }
 
-    public Boolean getPaid() {
-        return paid;
+    public Category getCategory() {
+        return category;
     }
 
     public Collection<Review> getReviews() {

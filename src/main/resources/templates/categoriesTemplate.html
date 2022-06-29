@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,19 +15,22 @@
 </head>
 
 <body>
-    <header>
-        <div class="header-container">
-            <h1>Streaming Review</h1>
-        </div>
-    </header>
+<header>
+    <div class="header-container">
+        <h1>
+            <a href="/">Streaming Services</a>
+        </h1>
+    </div>
+</header>
     <div class="img-container">
         <img src="/img/family tv banner.jpg">
     </div>
     <main>
         <nav>
-            <a href="/paid.html">Paid</a>
-            <a href="/un-paid.html">Un-paid</a>
-            <a href="/hashtags/">#Hash-Tags</a>
+            <ul>
+                <li th:each = "thing:${categories}">
+                <a th:text="${thing.name}" th:href="'/categories/' + ${thing.id}"></a></li>
+            </ul>
         </nav>
     </main>
 </body>

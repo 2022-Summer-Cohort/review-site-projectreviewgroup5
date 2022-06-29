@@ -16,13 +16,13 @@
 <header>
     <div class="header-container">
         <h1>
-            <a href="/index.html">Streaming Services</a>
+            <a href="/">Streaming Services</a>
         </h1>
     </div>
 </header>
 <!--<div th:replace="fragments.html :: nav"></div>-->
 <div class="container">
-    <ul>
+    <ul class="hashtag-ul">
         <li th:each="thing:${hashtags}" ><a th:href="'/hashtags/' +
         ${thing.id}" th:text="${thing.name}"></a></li>
     </ul>
@@ -30,10 +30,11 @@
 <!--<div th:replace="fragments.html :: footer"></div>-->
 <main>
     <nav>
-        <a href="/paid.html">Paid</a>
-        <a href="/un-paid.html">Un-paid</a>
+        <a href="/categories/1">Paid</a>
+        <a href="/categories/2">Un-paid</a>
     </nav>
 </main>
+
 </body>
 
 </html>
