@@ -22,6 +22,7 @@
 <div class="container">
     <ul class="hashtag-ul">
         <li th:each = "thing:${category.sites}">
+            <img class = "icon" th:src="${thing.imgUrl}" th:alt="${thing.altImgTxt}" />
             <a th:text="${thing.name}" th:href="'/sites/' + ${thing.id}"></a>
         </li>
     </ul>
