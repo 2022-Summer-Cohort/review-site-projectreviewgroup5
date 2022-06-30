@@ -16,14 +16,16 @@
 
 <body>
 <div th:replace="fragments :: header"></div>
-    <div class="img-container">
-        <img src="/img/family tv banner.jpg">
-    </div>
+<!--    <div class="img-container">-->
+<!--        <img src="/img/family tv banner.jpg">-->
+<!--    </div>-->
 <div class="container">
     <ul class="hashtag-ul">
-        <li th:each = "thing:${category.sites}">
-            <img class = "icon" th:src="${thing.imgUrl}" th:alt="${thing.altImgTxt}" />
-            <a th:text="${thing.name}" th:href="'/sites/' + ${thing.id}"></a>
+        <li th:each = "site:${category.sites}">
+            <a th:href="'/sites/' + ${site.id}">
+                <img class="icon" th:src="${site.imgUrl}" th:alt="${site.altImgTxt}" />
+                <p th:text="${site.name}"></p>
+            </a>
         </li>
     </ul>
 

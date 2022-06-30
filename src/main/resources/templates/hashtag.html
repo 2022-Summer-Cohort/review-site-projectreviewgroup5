@@ -15,12 +15,13 @@
 <body>
 <div th:replace="fragments :: header"></div>
     <div class = "container">
-        <ul>
+        <ul class="hashtag-ul">
         <h1 class="hashtag-h1" th:text="${hashtag.name}"></h1>
-        <ul class="inside-list">
-            <li th:each = "thing: ${hashtag.sites}" ><a th:href="'/sites/' +
-                    ${thing.id}" th:text="${thing.name}"></a></li>
-        </ul>
+            <li th:each = "thing: ${hashtag.sites}" >
+                <img class="icon" th:src="${thing.imgUrl}" th:alt="${thing.altImgTxt}" />
+                <a th:href="'/sites/' +
+                    ${thing.id}" th:text="${thing.name}">
+            </a></li>
         </ul>
     </div>
 
