@@ -4,7 +4,7 @@
     margin: 0;
 }
 body {
-    background-color: #EADCD3;
+    background-color: rgb(40 23 48);
     font-family: 'Bebas Neue', cursive;
     letter-spacing: 2px;
 }
@@ -17,29 +17,28 @@ color: black;
 header {
     display: flex;
     justify-content: center;
-    background-color: #808F64;
+    background-color: rgb(112 86 115);
     border: 3px black solid;
     font-size: 1.6rem;
     letter-spacing: 6px;
-    color: #2D2121;
     text-decoration: none;
 
 }
 
 header a {
-    color: #2D2121;
+    color: hsl(295deg 37% 69%);
     text-decoration: none;
 }
 .header-container:hover{
-    background-color:#9daf7c;
-    color:grey;
+    background-color:#594d59;
+    color:white;
 }
 
 .header-container {
     padding-left: 20px;
     padding-right: 20px;
     border: 2px solid black;
-    background-color:#909F78;
+    background-color:hsl(295deg 1% 15%);
     margin:7px;
 }
 .img-container{
@@ -47,7 +46,7 @@ header a {
     justify-content: center;
 }
 .img-container img {
-    width: 60vw;
+    width: 50vw;
     height: auto;
     margin-top: 3%;
 }
@@ -58,12 +57,13 @@ header a {
     margin-top: 5%;
     margin-left: 40%;
     border: 3px solid black;
+    border-radius:15%;
 }
 
 
 .foot {
     margin-top: 5%;
-    background-color: #808F64;
+    background-color: rgb(112 86 115);
     font-size: 1.1rem;
     border: 3px black solid;
     font-size: 1.6rem;
@@ -74,12 +74,13 @@ header a {
     border: 2px solid black;
     padding: 15px;
     border-radius: 15%;
-    color: #2D2121;
+    color: hsl(295deg 37% 69%);
     font-weight: bold;
-    background-color: #909F78;
+    background-color: hsl(295deg 1% 15%);
 }
 .foot a:hover{
-    background-color:#9daf7c;
+    background-color:#594d59;
+    color:white;
 }
 .foot ul{
     display:flex;
@@ -96,7 +97,7 @@ header a {
 }
 
 .hashtag-container {
-    background-color: #cfb09d;
+    background-color: rgb(112 86 115);
     border: 2px solid black;
     display: flex;
     width: 25%;
@@ -105,6 +106,7 @@ header a {
     margin-left: 5%;
     margin-right: 5%;
     height: auto;
+    border-radius:5%;
 }
 
 .hashtag-container a:hover {
@@ -124,13 +126,14 @@ header a {
 
 
 .review-container {
-    background-color: #cfb09d;
+    background-color: rgb(112 86 115);
     border: 2px solid black;
     display: flex;
     flex-direction: column;
     padding: 2%;
     width: 60%;
     margin-right: 5%;
+   border-radius:5%;
 }
 
 .review-container ul{
@@ -143,26 +146,28 @@ header a {
     border: 2px solid black;
     margin-top: 4%;
     padding: 3%;
-    background-color: #EADCD3;
+    background-color: hsl(295deg 1% 15%);
     width: 60%;
+    color: white;
+    border-radius:5%;
 }
 
 .review-form-container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background-color: lightpink; */
     margin-top: 5%;
     border: 2px solid black;
     width: 40%;
     margin-left: 30%;
     padding: 2%;
+    background-color: rgb(112 86 115);
+    border-radius:5%;
 }
 
 .hashtag-form{
     display: flex;
     padding: 1%;
-    /* background-color: darkkhaki; */
     margin-top: 2%;
 }
 
@@ -179,15 +184,16 @@ header a {
 }
 
 .hashtag-form button{
-    background-color: #808F64;
+    background-color: rgb(40 23 48);
     font-size: 15px;
     padding: 2%;
     border-radius: 10%;
     margin-left: 45%;
     margin-top: 4%;
+    color:hsl(295deg 37% 69%);
 }
 .hashtag-form button:hover {
-    background-color: #909F78;
+    background-color: #594d59;
     color: white;
   }
 
@@ -209,32 +215,20 @@ header a {
   }
 
 .review-form button{
-    background-color: #808F64;
+    background-color: rgb(40 23 48);
     font-size: 20px;
     padding: 2%;
     border-radius: 10%;
     margin-left: 45%;
     margin-top: 4%;
+    color:hsl(295deg 37% 69%);
 }
 
 .review-form button:hover {
-    background-color: #909F78;
+    background-color: #594d59;
     color: white;
   }
 
-  .paid-img {
-  width: 45vw;
-  height: auto;
-  margin-left: 25%;
-  margin-top:1%;
-  }
-
-  .un-paid-img {
-  margin-left: 40%;
-  width: 350px;
-  height: auto;
-  margin-top: 2%;
-  }
 
   .hashtag-ul {
     margin-top: 4%;
@@ -244,7 +238,7 @@ header a {
     align-items:center;
   }
   .hashtag-ul li {
-    background-color:#808F64;
+    background-color:#796c7a;
     font-size: 1.3rem;
     padding: 1%;
     border: 2px solid black;
@@ -256,6 +250,10 @@ header a {
     display: flex;
     flex-direction:column;
   }
+  .hashtag-ul a{
+  color: hsl(295deg 37% 69%);
+  }
+
 .hashtag-ul a:hover{
     color: grey;
 }
@@ -263,6 +261,7 @@ header a {
 text-align: center;
 font-size: 2rem;
 margin: 1%;
+color:hsl(295deg 37% 69%);
 }
 .inside-list{
     text-align:center;
@@ -275,6 +274,7 @@ margin: 1%;
 .icon {
     width:150px;
     height:125px;
+    border-radius: 15%;
 }
 
 .hashtags {
@@ -285,6 +285,6 @@ margin-top: 2%;
 
 .hashtags img{
 border-radius: 5%;
-width: 40vw;
-height: auto;
+width: auto;
+height: 30vh;
 }
